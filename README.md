@@ -73,6 +73,26 @@ You're encouraged to modify the scripts and configuration files to suit your pre
 -  **Dotfiles**: Edit `.shared_prompt`, `.zprompt`, `.bash_prompt` to add or modify shell configurations.
 -  **Sublime Text and VS Code**: Adjust settings in the `settings/` directory to change editor preferences and themes.
 
+### Fork Modifications (for 256GB MacBook Air)
+
+This fork has been optimized for limited storage by commenting out rarely-used applications in `brew.sh`. To restore any removed package, uncomment the relevant line and re-run `./install.sh`.
+
+Removed packages and their web alternatives:
+- **Spotify** → Use [open.spotify.com](https://open.spotify.com)
+- **Discord** → Use [discord.com/app](https://discord.com/app)
+- **Docker** → Commented out, uncomment when needed for containerization
+- **Firefox/Brave** → Using Chrome as primary browser
+- **GIMP** → Commented out, uncomment when needed for image editing
+- **Postman** → Can use VS Code REST extensions or curl
+- **Codex** → Use [codex.github.com](https://codex.github.com) web version
+- **Copilot CLI** → Using GitHub Copilot in VS Code instead
+- **Google Drive** → Use web version at [drive.google.com](https://drive.google.com) or File Stream
+- **VLC** → Use web-based media players or QuickTime for local files
+- **Rectangle** → Use built-in macOS window snapping or other lightweight alternatives
+- **Keyboard Clean Tool** → Not essential for development
+
+**Space saved:** ~5GB+
+
 ## Contributing
 
 Feel free to fork this repository and customize it for your setup. Pull requests for improvements and bug fixes are welcome, but as said above, I likely won't accept pull requests that simply add additional brew installations or change some settings unless they align with my personal preferences.

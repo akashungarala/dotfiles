@@ -1,5 +1,34 @@
 #!/usr/bin/env zsh
 
+# ==============================================================================
+# FORK MODIFICATIONS FOR 256GB MACBOOK AIR
+# ==============================================================================
+# The following packages have been commented out to save ~3.5GB of disk space:
+#
+# Browsers (saved ~750MB):
+#   - firefox (~400MB) - Only need Chrome
+#   - brave-browser (~350MB) - Only need Chrome
+#
+# Development Tools (saved ~1.5GB):
+#   - docker (~1.5GB) - Rarely used, can install when needed
+#   - postman (~200MB) - Can use VS Code REST extensions or curl
+#
+# Desktop Apps with Web Alternatives (saved ~1.0GB):
+#   - spotify (~300MB) - Use https://open.spotify.com
+#   - discord (~300MB) - Use https://discord.com/app
+#
+# Optional Tools (saved ~450MB):
+#   - gimp (~450MB) - Can install when needed for image editing
+#
+# To re-enable any package:
+#   1. Uncomment the line in the apps=() array
+#   2. Uncomment the corresponding interactive prompt (if applicable)
+#   3. Run ./install.sh
+#
+# To install a single removed package:
+#   brew install --cask <package-name>
+# ==============================================================================
+
 # Install Homebrew if it isn't already installed
 if ! command -v brew &>/dev/null; then
     echo "Homebrew not installed. Installing Homebrew."
@@ -138,23 +167,23 @@ $(brew --prefix)/bin/uv tool install ruff
 # Define an array of applications to install using Homebrew Cask.
 apps=(
     "google-chrome"
-    "firefox"
-    "brave-browser"
+    # "firefox"              # REMOVED: Only need Chrome for primary browser
+    # "brave-browser"        # REMOVED: Only need Chrome for primary browser
     "sublime-text"
     "visual-studio-code"
     "git-credential-manager"
-    "docker"
+    # "docker"               # REMOVED: Rarely used (~1.5GB), install when needed
     "claude-code"
-    "codex"
-    "copilot-cli"
-    "spotify"
-    "discord"
-    "google-drive"
-    "gimp"
-    "vlc"
-    "rectangle"
-    "postman"
-    "keyboardcleantool"
+    # "codex"                # REMOVED: Use web version at codex.github.com
+    # "copilot-cli"          # REMOVED: Use GitHub Copilot in VS Code instead of CLI tool
+    # "spotify"              # REMOVED: Use web version at open.spotify.com
+    # "discord"              # REMOVED: Use web version at discord.com/app
+    # "google-drive"         # REMOVED: Use Google Drive File Stream or web version at drive.google.com
+    # "gimp"                 # REMOVED: Not needed for dev work (~450MB)
+    # "vlc"                  # REMOVED: Use web-based media players or QuickTime for local files
+    # "rectangle"            # REMOVED: Use built-in macOS window snapping features or third-party tools with smaller footprints
+    # "postman"              # REMOVED: Use VS Code REST extensions or curl
+    # "keyboardcleantool"    # REMOVED: Not essential, can use on-screen keyboard or unplug physical keyboard for cleaning
 )
 
 # Loop over the array to install each application.
@@ -213,14 +242,14 @@ read
 echo "Connect Google Account (System Settings -> Internet Accounts). Press enter to continue..."
 read
 
-echo "Sign in to Spotify. Press enter to continue..."
-read
+# echo "Sign in to Spotify. Press enter to continue..."
+# read   # REMOVED: Spotify app not installed (using web version)
 
-echo "Sign in to Discord. Press enter to continue..."
-read
+# echo "Sign in to Discord. Press enter to continue..."
+# read   # REMOVED: Discord app not installed (using web version)
 
-echo "Open Rectangle and give it necessary permissions. Press enter to continue..."
-read
+# echo "Open Rectangle and give it necessary permissions. Press enter to continue..."
+# read   # REMOVED: Rectangle app not installed
 
-echo "Import your Rectangle settings located in ~/dotfiles/settings/RectangleConfig.json. Press enter to continue..."
-read
+# echo "Import your Rectangle settings located in ~/dotfiles/settings/RectangleConfig.json. Press enter to continue..."
+# read   # REMOVED: Rectangle app not installed
